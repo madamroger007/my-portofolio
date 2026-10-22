@@ -8,6 +8,9 @@ import { ArrowUpRight, CalendarDays, Github, Layers3, Tag } from "lucide-react";
 import TooltipComponent from '../TooltipComponent'
 import { motion } from 'framer-motion';
 import { formatYear, getIconName } from '@/src/utils/DateTime';
+import {
+  Card,
+} from "@/components/ui/card"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -22,15 +25,13 @@ const CardProject = ({ project, index }: { project: Project; index: number }) =>
     whileHover={{ y: -7 }}
     className="group relative min-w-0 overflow-hidden rounded-[30px]  p-px shadow-[2px_12px_30px_rgba(15,23,42,0.14)] transition dark:from-white/18 dark:via-cyan-200/10 dark:to-white/5 dark:shadow-[0_24px_70px_rgba(0,0,0,0.3)]"
   >
-    <div className="relative flex h-full min-h-[320px] flex-col overflow-hidden rounded-[29px] border border-white/50 bg-white/82 p-2.5 backdrop-blur dark:border-white/10 dark:bg-gray-900">
-
+    <Card className="relative max-w-sm flex flex-col overflow-hidden rounded-[29px] border border-white/50 bg-white/82 p-2.5 backdrop-blur dark:border-white/10 dark:bg-gray-900">
       <div className="relative aspect-video overflow-hidden rounded-[24px] bg-slate-200 ring-1 ring-slate-950/5 dark:bg-slate-950 dark:ring-white/10">
         <Image
           src={project.imgUrl}
           alt={`${project.title} project thumbnail`}
           fill
-          sizes="(min-width: 1280px) 380px, (min-width: 768px) 45vw, 90vw"
-          className="object-cover saturate-[0.9] transition duration-700 group-hover:scale-105 group-hover:saturate-100"
+          className="saturate-[0.9] transition duration-700 group-hover:scale-105 group-hover:saturate-100"
           onError={(event) => {
             event.currentTarget.style.display = "none";
           }}
@@ -52,19 +53,13 @@ const CardProject = ({ project, index }: { project: Project; index: number }) =>
         <h3 className="font-poppins text-2xl font-extrabold leading-tight text-slate-950 transition group-hover:text-cyan-700 dark:text-white dark:group-hover:text-cyan-200">
           {project.title}
         </h3>
-        <p className="mt-4 flex-1 text-sm leading-6 text-gray-400 dark:text-white/58">
+        <p className="mt-4 flex-1 text-sm leading-6 text-gray-400 dark:text-white/58 truncate ... hover:overflow-visible hover:text-wrap">
           {project.description}
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           {(project.icons ?? []).map((icon, iconIndex) => {
             return (
-              // <span
-              //     key={`${technology}-${iconIndex}`}
-              //     className="rounded-full border border-cyan-500/15 bg-cyan-50 px-3 py-1.5 text-xs font-bold text-cyan-800 transition group-hover:border-cyan-500/30 dark:border-white/10 dark:bg-white/[0.06] dark:text-cyan-100"
-              // >
-              //     {technology}
-              // </span>
               <TooltipComponent key={iconIndex} tooltip={icon.name}>
                 <img src={icon.url} alt="" className="badge bg-transparent  border-transparent  grayscale hover:grayscale-0 " />
               </TooltipComponent>
@@ -96,7 +91,7 @@ const CardProject = ({ project, index }: { project: Project; index: number }) =>
           </Link>
         </div>
       </div>
-    </div>
+    </Card>
   </motion.article>
 );
 

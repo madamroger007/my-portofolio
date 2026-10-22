@@ -15,6 +15,7 @@ import LayoutCardProject from '../../../../components/layout/LayoutCardProject';
 import { TitleCard } from '../../../../components/elemen/card/TitleCard';
 import TitleLiner from '../../../../components/elemen/text/TitleLiner';
 import CardProject from '../../../../components/elemen/card/CardProject';
+import CardBoxEmpty from '../../../../components/elemen/card/CardBoxEmpty';
 
 type Card = {
   value: string,
@@ -72,7 +73,7 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
                   />
                 ))
               ) : (
-                <div className="text-center py-10 w-full col-span-full">Kosong</div>
+                <CardBoxEmpty />
               )}
             </LayoutCardProject>
           </TabsContent>
