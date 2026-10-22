@@ -2,7 +2,6 @@ import React from 'react';
 import { Children } from '../types/types';
 import { useMediaQuery } from 'react-responsive';
 
-// Komponen untuk kondisi media query
 const Desktop = ({ children }: Children) => {
     const isDesktop = useMediaQuery({ minWidth: 992 });
     return isDesktop ? <>{children}</> : null;

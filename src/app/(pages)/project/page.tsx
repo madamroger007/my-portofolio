@@ -1,8 +1,9 @@
 import LayoutComponent from '../../../components/layout/layout'
-import React from 'react'
+import React, { Suspense } from 'react'
 import ProjectCardSection from './_section/ProjectCardSection'
 import PaginationControls from '../../../components/elemen/pagination/PaginationControls'
-import { getProject } from '../../../utils/getApiRequest'
+import { getProject } from '../../../lib/api'
+import { SkeletonCardGrid } from '@/src/components/elemen/loading/Skeleton-card'
 export default async function page({
   searchParams,
 }: {
@@ -13,20 +14,19 @@ export default async function page({
   const page = searchParams['page'] ?? '1'
   const per_page = searchParams['per_page'] ?? '5'
 
-  // mocked, skipped and limited in the real app
-  const start = (Number(page) - 1) * Number(per_page) // 0, 5, 10 ...
+  const start = (Number(page) - 1) * Number(per_page)
 
-  const end = start + Number(per_page) // 5, 10, 15 ...
+  const end = start + Number(per_page)
 
   const entries = getDataProject.slice(start, end)
 
-
   const itemproject = getDataProject.map(item => item)
-
   return (
     <LayoutComponent>
       <section className="w-full pt-14 pb-52 flex flex-col gap-52">
-        <ProjectCardSection items={entries} />
+        <Suspense fallback={<SkeletonCardGrid count={6} />}>
+          <ProjectCardSection items={entries} key={entries.map((item) => item.id).join('-')} />
+        </Suspense>
         <PaginationControls
           hasNextPage={end < itemproject.length}
           hasPrevPage={start > 0}

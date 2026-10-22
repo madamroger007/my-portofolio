@@ -17,7 +17,7 @@ const waveBars = [
     20, 18, 13, 18, 32, 44, 40, 26, 16, 12,
 ]
 
-export const WaveSound = ({
+const WaveSound = ({
     className,
     isAnimated = true,
     ...props

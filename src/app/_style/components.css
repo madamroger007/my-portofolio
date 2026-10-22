@@ -88,4 +88,8 @@
     body {
       @apply bg-background text-foreground;
     }
+
+    .card {
+      @apply bg-card text-card-foreground ; 
+    }
   }

@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef } from 'react'
-import { icon } from '../../../lib/data.d'
+import { icon } from '../../../lib/dummy-data'
 import { Card } from '../../../types/types'
 
 declare global {

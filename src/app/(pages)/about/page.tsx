@@ -3,8 +3,9 @@ import Introduction from './_section/Introduction'
 import { Metadata } from 'next'
 import Experience from './_section/Experience'
 import Certification from './_section/Certification'
-import { getCertification, getExperience,getProject } from '../../../utils/getApiRequest'
-
+import { getCertification, getExperience } from '../../../lib/api'
+import React from 'react'
+import { SkeletonCardGrid } from '@/src/components/elemen/loading/Skeleton-card'
 export const metadata: Metadata = {
   title: "about"
 }
@@ -17,8 +18,12 @@ async function page() {
       <LayoutComponent>
         <section className="w-full pt-14 pb-52 flex flex-col gap-52">
           <Introduction />
-          <Experience items={dataExperience} />
-          <Certification items={dataCertification} />
+          <React.Suspense fallback={<SkeletonCardGrid count={6} />}>
+            <Experience items={dataExperience} />
+          </React.Suspense>
+          <React.Suspense fallback={<SkeletonCardGrid count={6} />}>
+            <Certification items={dataCertification} />
+          </React.Suspense>
         </section>
       </LayoutComponent>
     </>
