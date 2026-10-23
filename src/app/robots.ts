@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/dashboard",  // Disallow only specific paths like dashboard
+      disallow: "/dashboard", 
     },
     sitemap: `${baseUrl}/sitemap.xml`,
   };

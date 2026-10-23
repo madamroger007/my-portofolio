@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import dynamic from 'next/dynamic';
-import { TitleCard } from '../../../../components/elemen/card/TitleCard';
+import TitleCard from '../../../../components/elemen/card/TitleCard';
 import TitleLiner from '../../../../components/elemen/text/TitleLiner';
 import React from 'react';
 import { FaLink } from 'react-icons/fa';

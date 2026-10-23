@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   generator: "Next.js",
   applicationName: 'Website Portofolio',
   referrer: 'origin-when-cross-origin',
-  keywords: ['Adam', 'Adam setiadi', 'Madam', 'MadamRoger', "Madamroger", "madamroger"],
+  keywords: ['Adam', 'Adam setiadi', 'Madam', 'MadamRoger', "Madamroger", "madamroger", "Setiadi", "Portofolio", "Website Portofolio", "Website Portofolio Madamroger", "Website Portofolio Adam Setiadi"],
   authors: [{ name: 'Adam', url: process.env.NEXT_PUBLIC_URL_PRODUCTION }],
   creator: 'Adam Setiadi',
   publisher: 'Adam Setiadi',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Madamroger",
     description: "Hai! Nama saya Adam Setiadi, saat ini saya tinggal di Bandung, Jawa Barat, Indonesia. Saya sedang menempuh pendidikan di Universitas Bale Bandung",
-    url: env.NEXT_PUBLIC_URL_PRODUCTION, // Ganti dengan URL situs Anda
+    url: env.NEXT_PUBLIC_URL_PRODUCTION, 
     siteName: "Madamroger",
     locale: "en_US",
     type: "website",

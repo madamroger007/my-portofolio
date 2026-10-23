@@ -1,7 +1,7 @@
 import React from 'react'
 import TitleLiner from '../text/TitleLiner'
 import { TbMoodEmpty } from "react-icons/tb";
-export const CardIsEmpty = () => {
+const CardIsEmpty = () => {
     return (
         <div className='w-full'>
             <div className='flex flex-col w-full items-center justify-center gap-5 px-5'>
@@ -11,3 +11,5 @@ export const CardIsEmpty = () => {
         </div>
     )
 }
+
+export default React.memo(CardIsEmpty)

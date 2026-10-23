@@ -33,4 +33,4 @@ const CardSertification: React.FC<CardSertificationProps> = ({ name, name_compan
   )
 }
 
-export default CardSertification
+export default React.memo(CardSertification)

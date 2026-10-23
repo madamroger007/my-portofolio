@@ -3,11 +3,10 @@
 import React from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../../../components/ui/tabs"
 import TitleLiner from '../../../../components/elemen/text/TitleLiner'
-import { TitleCard } from '../../../../components/elemen/card/TitleCard'
+import TitleCard from '../../../../components/elemen/card/TitleCard'
 import { FaLink } from "react-icons/fa6";
 import clsx from 'clsx'
 import Link from 'next/link'
-// import { Skill } from '../../../../lib/data.d'
 import { Skills } from "../../../../types/types";
 
 import CardSkil from './CardSkil'
@@ -36,14 +35,14 @@ const SkillField = ({ items }: { items: Skills[] }) => {
                         <TabsTrigger value="webdev" className='max-md:carousel-item   mx-5' id="slide1">
                             <div className={clsx('mx-14  ', activeTab === "webdev" ? "" : "blur-sm")}>
 
-                                <img src="/src/img/icon/web.png" alt="a" className='w-full' />
-                                <h1>Web Development</h1>
+                                <img src="/src/img/icon/web.png" alt="app" className='w-full' />
+                                <h1>App Development</h1>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger value="android" className='max-md:carousel-item  mx-5 ' id="slide2">
                             <div className={clsx('mx-14  ', activeTab === "android" ? "" : "blur-sm")}>
                                 <img src="/src/img/icon/android.png" alt="a" className='w-full' />
-                                <h1>Android Development</h1>
+                                <h1>IT Helpdesk</h1>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger value="desain" className='max-md:carousel-item mx-5 ' id="slide3">
@@ -73,11 +72,7 @@ const SkillField = ({ items }: { items: Skills[] }) => {
                         <CardSkil items={item.filter(i => i.category.title === "Desain Grafis")} />
                     </TabsContent>
                 </section>
-
-
             </Tabs>
-
-
         </div>
     )
 }

@@ -7,16 +7,16 @@ import {
   TabsTrigger,
 } from "../../../../components/ui/tabs"
 import { ScrollArea, ScrollBar } from "../../../../components/ui/scroll-area"
-import { FaLaptopCode, FaLink, FaRegImages, FaVideo } from "react-icons/fa";
-import { MdOutlineSpaceDashboard } from "react-icons/md";
+import { FaLaptopCode, FaLink, FaRegImages, FaNetworkWired } from "react-icons/fa";
+import { RiCustomerService2Fill } from "react-icons/ri";
 import { RxDashboard } from "react-icons/rx";
 import { Project } from '../../../../types/types';
 import LayoutCardProject from '../../../../components/layout/LayoutCardProject';
-import { TitleCard } from '../../../../components/elemen/card/TitleCard';
+import TitleCard from '../../../../components/elemen/card/TitleCard';
 import TitleLiner from '../../../../components/elemen/text/TitleLiner';
 import CardProject from '../../../../components/elemen/card/CardProject';
 import CardBoxEmpty from '../../../../components/elemen/card/CardBoxEmpty';
-
+import { motion } from 'framer-motion'
 type Card = {
   value: string,
   children: React.ReactNode
@@ -53,9 +53,9 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
           <ScrollArea className='md:w-full w-fit whitespace-nowrap px-2 py-4'>
             <div className='w-full flex justify-center items-center gap-10'>
               <CardSection value="Application"><FaLaptopCode className='w-5 h-5' /> Application</CardSection>
-              <CardSection value="UI/UX Application"><MdOutlineSpaceDashboard className='w-5 h-5' /> UI / UX Application</CardSection>
-              <CardSection value="Design Image"><FaRegImages className='w-5 h-5' /> Image Design</CardSection>
-              <CardSection value="Design video"><FaVideo className='w-5 h-5' /> Video Design</CardSection>
+              <CardSection value="UI/UX Application"><RiCustomerService2Fill className='w-5 h-5' />Helpdesk</CardSection>
+              <CardSection value="Design Image"><FaRegImages className='w-5 h-5' />Creative Design</CardSection>
+              <CardSection value="Design video"><FaNetworkWired className='w-5 h-5' />Networking</CardSection>
               <CardSection value="Other"><RxDashboard className='w-5 h-5' /> Other</CardSection>
             </div>
             <ScrollBar orientation="horizontal" />
@@ -66,11 +66,20 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
             <LayoutCardProject>
               {filteredItems.length > 0 ? (
                 filteredItems.map((project, index) => (
-                  <CardProject
-                    key={project.id || index}
-                    project={project}
-                    index={index}
-                  />
+                  <React.Fragment key={index}>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, delay: index * 0.5 }}
+                    >
+                      <CardProject
+                        key={project.id || index}
+                        project={project}
+                        index={index}
+                      />
+
+                    </motion.div>
+                  </React.Fragment>
                 ))
               ) : (
                 <CardBoxEmpty />
@@ -79,7 +88,7 @@ const ProjectCardSection = ({ items }: { items: Project[] }) => {
           </TabsContent>
         </section>
       </Tabs>
-    </div>
+    </div >
   )
 }
 

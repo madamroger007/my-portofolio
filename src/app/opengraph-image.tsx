@@ -16,7 +16,6 @@ export const contentType = 'image/png'
 export default async function Image() {
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           fontSize: 24,
@@ -34,8 +33,6 @@ export default async function Image() {
     ),
     // ImageResponse options
     {
-      // For convenience, we can re-use the exported icons size metadata
-      // config to also set the ImageResponse's width and height.
       ...size,
     }
   )

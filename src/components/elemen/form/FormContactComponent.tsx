@@ -17,7 +17,7 @@ import {
 import { Input } from "../../../components/ui/input"
 import { cn } from "../../../lib/utils"
 import { Textarea } from "../../../components/ui/textarea"
-import { CardSocialMedia } from "../card/CardSocialMedia"
+import CardSocialMedia from "../card/CardSocialMedia"
 
 const formSchema = z.object({
     name: z.string().min(2, {

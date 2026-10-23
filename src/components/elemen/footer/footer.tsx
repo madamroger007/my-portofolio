@@ -27,7 +27,7 @@ const Footer = () => {
                     </div>
                     <div className='text-start'>
                         <h1>Address</h1>
-                        <p>Bandung, West Java, Indonesia</p>
+                        <p> West Java, Indonesia</p>
                     </div>
                 </a>
             </nav>

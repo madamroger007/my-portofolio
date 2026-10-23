@@ -2,7 +2,7 @@ import { Card } from '../../../types/types';
 import Link from 'next/link';
 import React from 'react'
 import { FaFacebook, FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
-export const CardSocialMedia: React.FC<Card> = ({ className }) => {
+const CardSocialMedia: React.FC<Card> = ({ className }) => {
   return (
 
     <ul className={'icon-home flex gap-8 justify-center ' + className}>
@@ -13,3 +13,5 @@ export const CardSocialMedia: React.FC<Card> = ({ className }) => {
     </ul>
   )
 }
+
+export default React.memo(CardSocialMedia)

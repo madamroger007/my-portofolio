@@ -96,6 +96,7 @@ const CardProject = ({ project, index }: { project: Project; index: number }) =>
 );
 
 
-export default CardProject
+
+export default React.memo(CardProject)
 
 

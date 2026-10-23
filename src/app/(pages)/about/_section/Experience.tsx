@@ -4,7 +4,7 @@ import React, { useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { TiFlowChildren } from "react-icons/ti";
 
-import { TitleCard } from '../../../../components/elemen/card/TitleCard';
+import  TitleCard from '../../../../components/elemen/card/TitleCard';
 import TitleLiner from '../../../../components/elemen/text/TitleLiner';
 import { CardComponentsExpProps } from '../../../../components/elemen/card/CardComponentsExp';
 import { Experience as ExperienceType } from '../../../../types/types';

@@ -1,5 +1,5 @@
-import { CardIsEmpty } from '../../../../components/elemen/card/CardIsEmpty'
-import { CardSkillComponent } from '../../../../components/elemen/card/CardSkillComponent'
+import  CardIsEmpty from '../../../../components/elemen/card/CardIsEmpty'
+import CardSkillComponent from '../../../../components/elemen/card/CardSkillComponent'
 import TitleLiner from '../../../../components/elemen/text/TitleLiner'
 import { Skills } from '../../../../types/types'
 import React from 'react'

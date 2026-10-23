@@ -9,7 +9,7 @@ interface Props {
     items: Icons;
     className?: string
 }
-export const CardSkillComponent: React.FC<Props> = ({ items, className }) => {
+ const CardSkillComponent: React.FC<Props> = ({ items, className }) => {
     return (
 
         <TooltipComponent tooltip={items.name}>
@@ -20,3 +20,5 @@ export const CardSkillComponent: React.FC<Props> = ({ items, className }) => {
 
     )
 }
+
+export default React.memo(CardSkillComponent)
