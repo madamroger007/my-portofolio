@@ -9,12 +9,12 @@ interface Props {
     items: Icons;
     className?: string
 }
- const CardSkillComponent: React.FC<Props> = ({ items, className }) => {
+const CardSkillComponent: React.FC<Props> = ({ items, className }) => {
     return (
 
         <TooltipComponent tooltip={items.name}>
             <Link href={items.url} className={cn("p-2", className)} target='_blank'>
-                <Image src={items.url} width={50} height={50} alt={items.name} className=' grayscale hover:grayscale-0 ' />
+                <Image loading="eager" src={items.url} width={50} height={50} alt={items.name} className='w-auto grayscale hover:grayscale-0 ' />
             </Link>
         </TooltipComponent>
 

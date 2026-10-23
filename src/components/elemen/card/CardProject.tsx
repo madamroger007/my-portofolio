@@ -30,7 +30,9 @@ const CardProject = ({ project, index }: { project: Project; index: number }) =>
         <Image
           src={project.imgUrl}
           alt={`${project.title} project thumbnail`}
-          fill
+          width={500}
+          height={500}
+          priority
           className="saturate-[0.9] transition duration-700 group-hover:scale-105 group-hover:saturate-100"
           onError={(event) => {
             event.currentTarget.style.display = "none";
@@ -61,7 +63,7 @@ const CardProject = ({ project, index }: { project: Project; index: number }) =>
           {(project.icons ?? []).map((icon, iconIndex) => {
             return (
               <TooltipComponent key={iconIndex} tooltip={icon.name}>
-                <img src={icon.url} alt="" className="badge bg-transparent  border-transparent  grayscale hover:grayscale-0 " />
+                <Image width={100} height={100} src={icon.url} alt="" className="badge bg-transparent  border-transparent  grayscale hover:grayscale-0 " />
               </TooltipComponent>
 
             );

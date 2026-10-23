@@ -10,6 +10,7 @@ import Link from 'next/link'
 import { Skills } from "../../../../types/types";
 
 import CardSkil from './CardSkil'
+import Image from 'next/image'
 
 const SkillField = ({ items }: { items: Skills[] }) => {
     const [activeTab, setActiveTab] = React.useState("webdev");
@@ -35,19 +36,19 @@ const SkillField = ({ items }: { items: Skills[] }) => {
                         <TabsTrigger value="webdev" className='max-md:carousel-item   mx-5' id="slide1">
                             <div className={clsx('mx-14  ', activeTab === "webdev" ? "" : "blur-sm")}>
 
-                                <img src="/src/img/icon/web.png" alt="app" className='w-full' />
+                                <Image width={100} height={100} loading="eager" src="/src/img/icon/web.png" alt="app" className='w-full' />
                                 <h1>App Development</h1>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger value="android" className='max-md:carousel-item  mx-5 ' id="slide2">
                             <div className={clsx('mx-14  ', activeTab === "android" ? "" : "blur-sm")}>
-                                <img src="/src/img/icon/android.png" alt="a" className='w-full' />
+                                <Image width={100} height={100} loading="eager" src="/src/img/icon/android.png" alt="a" className='w-full' />
                                 <h1>IT Helpdesk</h1>
                             </div>
                         </TabsTrigger>
                         <TabsTrigger value="desain" className='max-md:carousel-item mx-5 ' id="slide3">
                             <div className={clsx('mx-14  ', activeTab === "desain" ? "" : "blur-sm")}>
-                                <img src="/src/img/icon/desain.png" alt="a" className='w-full' />
+                                <Image width={100} height={100} loading="eager" src="/src/img/icon/desain.png" alt="a" className='w-full' />
                                 <h1>Desain Grafis</h1>
                             </div>
 

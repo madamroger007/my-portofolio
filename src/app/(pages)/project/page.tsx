@@ -1,18 +1,23 @@
 import LayoutComponent from '../../../components/layout/layout'
-import React, { Suspense } from 'react'
+import { Suspense } from 'react'
 import ProjectCardSection from './_section/ProjectCardSection'
 import PaginationControls from '../../../components/elemen/pagination/PaginationControls'
 import { getProject } from '../../../lib/api'
 import { SkeletonCardGrid } from '@/src/components/elemen/loading/Skeleton-card'
-export default async function page({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+
+type PageProps = {
+  searchParams: Promise<{
+    [key: string]: string | string[] | undefined
+  }>
+}
+
+
+export default async function Page({ searchParams }: PageProps) {
+  const params = await searchParams
   const getDataProject = await getProject();
 
-  const page = searchParams['page'] ?? '1'
-  const per_page = searchParams['per_page'] ?? '5'
+  const page = params['page'] ?? '1'
+  const per_page = params['per_page'] ?? '5'
 
   const start = (Number(page) - 1) * Number(per_page)
 
