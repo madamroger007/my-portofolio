@@ -14,7 +14,7 @@ const CardSkillComponent: React.FC<Props> = ({ items, className }) => {
 
         <TooltipComponent tooltip={items.name}>
             <Link href={items.url} className={cn("p-2", className)} target='_blank'>
-                <Image loading="eager" src={items.url} width={50} height={50} alt={items.name} className='w-auto grayscale hover:grayscale-0 ' />
+                <Image loading="eager" src={items.url} width={35} height={35} alt={items.name} className='w-auto grayscale hover:grayscale-0 ' />
             </Link>
         </TooltipComponent>
 
