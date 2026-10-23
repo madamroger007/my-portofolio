@@ -1,4 +1,4 @@
-import { ReactNode, memo } from "react";
+import { JSX, ReactNode, memo } from "react";
 import styles from "../../app/_style/style.module.css";
 
 export type CursorProps = {
